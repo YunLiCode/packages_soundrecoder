@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (c) 2010-2011, The MiCode Open Source Community (www.micode.net)
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="7dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/sound_main_bg"
+    android:orientation="vertical" >
+ <TextView 
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="@string/app_name"
+     android:textColor="#444444"
+     android:textSize="25sp"
+     android:layout_centerHorizontal="true"
+     android:layout_alignParentTop="true"/>
+ 
+ <com.yusun.soundrecorder.RecordNameEditText
+        android:id="@+id/file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="25dip"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="98dp"
+        android:background="#00000000"
+        android:selectAllOnFocus="true"
+        android:singleLine="true" />
+    <ImageView
+        android:id="@+id/wheel_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/bigcd" />
+    
+    <ImageView
+        android:id="@+id/wheel_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dip"
+        android:src="@drawable/bigcd" />
+    <ImageView 
+        android:id="@+id/smallcdcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:contentDescription="@string/app_name"
+        android:paddingBottom="40dp"
+        android:src="@drawable/smallcd"/>
+    <ImageView 
+        android:id="@+id/smallcdcd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="27dp"
+        android:paddingBottom="40dp"
+        android:src="@drawable/smallcd"/>
+    <ImageView
+        android:id="@+id/wheel_small_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:layout_marginLeft="64dp"
+        android:paddingBottom="35dp"
+        android:src="@drawable/middlecd" />
+    <ImageView
+        android:id="@+id/wheel_small_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="60dp"
+        android:paddingBottom="35dp"
+        android:src="@drawable/middlecd" />
+    <LinearLayout
+        android:id="@+id/time_calculator"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:paddingTop="130dip" >
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/vumeter_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="100dp"
+        android:orientation="horizontal" >
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/play_seek_bar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="100dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/starttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#7FFFFFFF" />
+
+        <SeekBar
+            android:id="@+id/play_seek_bar"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:thumb="@drawable/seek_button"
+            android:orientation="horizontal"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip" />
+
+        <TextView
+            android:id="@+id/totaltime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dip"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#7FFFFFFF" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/newButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/btn_new" />
+
+    <ImageButton
+        android:id="@+id/finishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_finish"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/recordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_record" />
+
+    <ImageButton
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_stop"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_play"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/pauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_pause"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_delete" />
+
+    
+
+</RelativeLayout>

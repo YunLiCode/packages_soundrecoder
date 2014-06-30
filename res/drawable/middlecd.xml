@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:oneshot="false">
+  			<item android:duration="50" android:drawable="@drawable/middlecd0" />
+            <item android:duration="50" android:drawable="@drawable/middlecd1" />
+            <item android:duration="50" android:drawable="@drawable/middlecd2" />
+            <item android:duration="50" android:drawable="@drawable/middlecd3" />
+            <item android:duration="50" android:drawable="@drawable/middlecd4" />
+            <item android:duration="50" android:drawable="@drawable/middlecd5" />
+            <item android:duration="50" android:drawable="@drawable/middlecd6" />
+            <item android:duration="50" android:drawable="@drawable/middlecd7" />
+            <item android:duration="50" android:drawable="@drawable/middlecd8" />
+            <item android:duration="50" android:drawable="@drawable/middlecd9" />
+            <item android:duration="50" android:drawable="@drawable/middlecd10" />
+            <item android:duration="50" android:drawable="@drawable/middlecd11" />
+            <item android:duration="50" android:drawable="@drawable/middlecd12" />
+            <item android:duration="50" android:drawable="@drawable/middlecd13" />
+            <item android:duration="50" android:drawable="@drawable/middlecd14" />
+            <item android:duration="50" android:drawable="@drawable/middlecd15" />
+            <item android:duration="50" android:drawable="@drawable/middlecd16" />
+            <item android:duration="50" android:drawable="@drawable/middlecd17" />
+</animation-list>

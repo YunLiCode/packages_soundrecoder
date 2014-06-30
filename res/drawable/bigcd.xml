@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:oneshot="false">
+            <item android:duration="0" android:drawable="@drawable/big1" />
+            <item android:duration="0" android:drawable="@drawable/big2" />
+            <item android:duration="0" android:drawable="@drawable/big3" />
+            <item android:duration="0" android:drawable="@drawable/big4" />
+            <item android:duration="0" android:drawable="@drawable/big5" />
+            <item android:duration="0" android:drawable="@drawable/big6" />
+            <item android:duration="0" android:drawable="@drawable/big7" />
+            <item android:duration="0" android:drawable="@drawable/big8" />
+            <item android:duration="0" android:drawable="@drawable/big9" />
+            <item android:duration="0" android:drawable="@drawable/big10" />
+            <item android:duration="0" android:drawable="@drawable/big11" />
+            <item android:duration="0" android:drawable="@drawable/big12" />
+            <item android:duration="0" android:drawable="@drawable/big14" />
+            <item android:duration="0" android:drawable="@drawable/big15" />
+            <item android:duration="0" android:drawable="@drawable/big16" />
+            <item android:duration="0" android:drawable="@drawable/big17" />
+            <item android:duration="0" android:drawable="@drawable/big18" />
+            <item android:duration="0" android:drawable="@drawable/big19" />
+            <item android:duration="0" android:drawable="@drawable/big20" />
+            <item android:duration="0" android:drawable="@drawable/big21" />
+            <item android:duration="0" android:drawable="@drawable/big22" />
+            <item android:duration="0" android:drawable="@drawable/big23" />
+            <item android:duration="0" android:drawable="@drawable/big24" />
+</animation-list>
