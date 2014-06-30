@@ -51,6 +51,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -207,7 +210,7 @@ public class SoundRecorder extends Activity implements Button.OnClickListener,
         mSavedRecord = new HashSet<String>();
 
         initResourceRefs();
-
+       
         setResult(RESULT_CANCELED);
         registerExternalStorageListener();
         if (icycle != null) {
@@ -272,7 +275,8 @@ public class SoundRecorder extends Activity implements Button.OnClickListener,
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
+       
+          
         setContentView(R.layout.main);
         initResourceRefs();
         updateUi(false);
@@ -319,10 +323,14 @@ public class SoundRecorder extends Activity implements Button.OnClickListener,
         wheel_small_right=(ImageView)findViewById(R.id.wheel_small_right);
         smallcdcd=(ImageView)findViewById(R.id.smallcdcd);
         smallcdcd2=(ImageView)findViewById(R.id.smallcdcd2);
-        big = (ImageView) findViewById(R.id.wheel_left);
         big2 = (ImageView) findViewById(R.id.wheel_right);
         mFileNameEditText = (RecordNameEditText) findViewById(R.id.file_name);
-
+        //add test
+       
+        
+        
+        //
+        
         resetFileNameEditText();
         mFileNameEditText.setNameChangeListener(new RecordNameEditText.OnNameChangeListener() {
             @Override
@@ -343,7 +351,7 @@ public class SoundRecorder extends Activity implements Button.OnClickListener,
         mPlaySeekBar.setOnSeekBarChangeListener(mSeekBarChangeListener);
 
         mTimerFormat = getResources().getString(R.string.timer_format);
-
+        
         if (mShowFinishButton) {
             mNewButton.setVisibility(View.GONE);
             mFinishButton.setVisibility(View.VISIBLE);
@@ -373,79 +381,77 @@ public class SoundRecorder extends Activity implements Button.OnClickListener,
     }
 
     private void startRecordPlayingAnimation() {
-        wheel_small_left.setImageResource(R.drawable.middlecd);  
-        wheel_small_left_ani = (AnimationDrawable) wheel_small_left.getDrawable();  
-        wheel_small_left_ani.start();
-        wheel_small_right.setImageResource(R.drawable.middlecd);  
-        wheel_small_right_ani = (AnimationDrawable) wheel_small_right.getDrawable();  
-        wheel_small_right_ani.start();
-        smallcdcd.setImageResource(R.drawable.smallcd);  
-        smallcdcd_ani = (AnimationDrawable) smallcdcd.getDrawable();  
-        smallcdcd_ani.start();
-        smallcdcd2.setImageResource(R.drawable.smallcd);  
-        smallcdcd2_ani = (AnimationDrawable) smallcdcd2.getDrawable();  
-        smallcdcd2_ani.start();
-        big.setImageResource(R.drawable.bigcd);  
-        big_ani = (AnimationDrawable) big.getDrawable();  
-        big_ani.start();
-        big2.setImageResource(R.drawable.bigcd);  
-        big2_ani = (AnimationDrawable) big2.getDrawable();  
-        big2_ani.start();
- 
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.rotate_cd);      
+        LinearInterpolator lir = new LinearInterpolator();  
+        anim.setInterpolator(lir);
+        findViewById(R.id.wheel_left).startAnimation(anim);
+        findViewById(R.id.wheel_right).startAnimation(anim);
+        
+        Animation animmid = AnimationUtils.loadAnimation(this, R.anim.rotate_mid);      
+        LinearInterpolator lirmid = new LinearInterpolator();  
+        animmid.setInterpolator(lirmid);
+        findViewById(R.id.wheel_small_left).startAnimation(animmid);
+        findViewById(R.id.wheel_small_right).startAnimation(animmid);
+        
+        Animation animsmall = AnimationUtils.loadAnimation(this, R.anim.rotate_sma);      
+        LinearInterpolator lirsmall = new LinearInterpolator();  
+        animsmall.setInterpolator(lirsmall);
+        findViewById(R.id.smallcdcd).startAnimation(animsmall);
+        findViewById(R.id.smallcdcd2).startAnimation(animsmall);
+        
     }
+    
 
     private void stopRecordPlayingAnimation() {
-        smallcdcd2_ani.stop();
-        smallcdcd_ani.stop();
-        wheel_small_left_ani.stop();
-        wheel_small_right_ani.stop();
-        big_ani.stop();
-        big2_ani.stop();
-     //   wheel_small_left.setImageResource(R.drawable.middlecd);  
-     //   wheel_small_left_ani = (AnimationDrawable) wheel_small_left.getDrawable();  
-  //      wheel_small_left_ani.start();
+    	Animation anim = AnimationUtils.loadAnimation(this, R.anim.rotate_cd);      
+        LinearInterpolator lir = new LinearInterpolator();  
+        anim.setInterpolator(lir);
+        findViewById(R.id.wheel_left).clearAnimation();
+        findViewById(R.id.wheel_right).clearAnimation();
+        
+        Animation animmid = AnimationUtils.loadAnimation(this, R.anim.rotate_mid);      
+        LinearInterpolator lirmid = new LinearInterpolator();  
+        animmid.setInterpolator(lirmid);
+        findViewById(R.id.wheel_small_left).clearAnimation();
+        findViewById(R.id.wheel_small_right).clearAnimation();
+        
+        Animation animsmall = AnimationUtils.loadAnimation(this, R.anim.rotate_sma);      
+        LinearInterpolator lirsmall = new LinearInterpolator();  
+        animsmall.setInterpolator(lirsmall);
+        findViewById(R.id.smallcdcd).clearAnimation();
+        findViewById(R.id.smallcdcd2).clearAnimation();
     }
 
     private void startRecordPlayingDoneAnimation() {
-    	big_ani.start();
-        big2_ani.start();//click stop animation
-   //     wheel_small_left.setImageResource(R.drawable.middlecd);  
-   //     wheel_small_left_ani = (AnimationDrawable) wheel_small_left.getDrawable();  
-  //      wheel_small_left_ani.start();
-        smallcdcd2_ani.start();
-        smallcdcd_ani.start();
-        wheel_small_left_ani.start();
-        wheel_small_right_ani.start();
     }
 
     private void startForwardAnimation() {
 
     }
-
+     
+     
     private void startBackwardAnimation() {
    
     }
 
     private void stopAnimation() {
-    	wheel_small_left.setImageResource(R.drawable.middlecd);  
-        wheel_small_left_ani = (AnimationDrawable) wheel_small_left.getDrawable();  
-        wheel_small_right.setImageResource(R.drawable.middlecd);  
-        wheel_small_right_ani = (AnimationDrawable) wheel_small_right.getDrawable();  
-        smallcdcd.setImageResource(R.drawable.smallcd);  
-        smallcdcd_ani = (AnimationDrawable) smallcdcd.getDrawable();  
-        smallcdcd2.setImageResource(R.drawable.smallcd);  
-        smallcdcd2_ani = (AnimationDrawable) smallcdcd2.getDrawable();  
-        big.setImageResource(R.drawable.bigcd);  
-        big_ani = (AnimationDrawable) big.getDrawable();  
-    	smallcdcd2_ani.stop();
-        smallcdcd_ani.stop();
-        wheel_small_left_ani.stop();
-        wheel_small_right_ani.stop();
-        big_ani.stop();
-    	big2.setImageResource(R.drawable.bigcd);  
-        big2_ani = (AnimationDrawable) big2.getDrawable();
-        big2_ani.stop();
- 
+    	Animation anim = AnimationUtils.loadAnimation(this, R.anim.rotate_cd);      
+        LinearInterpolator lir = new LinearInterpolator();  
+        anim.setInterpolator(lir);
+        findViewById(R.id.wheel_left).clearAnimation();
+        findViewById(R.id.wheel_right).clearAnimation();
+        
+        Animation animmid = AnimationUtils.loadAnimation(this, R.anim.rotate_mid);      
+        LinearInterpolator lirmid = new LinearInterpolator();  
+        animmid.setInterpolator(lirmid);
+        findViewById(R.id.wheel_small_left).clearAnimation();
+        findViewById(R.id.wheel_small_right).clearAnimation();
+        
+        Animation animsmall = AnimationUtils.loadAnimation(this, R.anim.rotate_sma);      
+        LinearInterpolator lirsmall = new LinearInterpolator();  
+        animsmall.setInterpolator(lirsmall);
+        findViewById(R.id.smallcdcd).clearAnimation();
+        findViewById(R.id.smallcdcd2).clearAnimation();
     }
 
     /*
@@ -1354,4 +1360,5 @@ public class SoundRecorder extends Activity implements Button.OnClickListener,
             }
         }
     }
+    
 }

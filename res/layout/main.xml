@@ -49,15 +49,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="100dp"
-        android:src="@drawable/bigcd" />
-    
+        android:src="@drawable/jiangyu" />
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="100dip"
+        android:src="@drawable/zege"/>
+
     <ImageView
         android:id="@+id/wheel_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginTop="100dip"
-        android:src="@drawable/bigcd" />
+        android:src="@drawable/jiangyu" />
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dip"
+        android:src="@drawable/zege"/>
     <ImageView 
         android:id="@+id/smallcdcd"
         android:layout_width="wrap_content"
@@ -67,7 +79,7 @@
         android:layout_marginLeft="30dp"
         android:contentDescription="@string/app_name"
         android:paddingBottom="40dp"
-        android:src="@drawable/smallcd"/>
+        android:src="@drawable/smallwheel"/>
     <ImageView 
         android:id="@+id/smallcdcd2"
         android:layout_width="wrap_content"
@@ -77,7 +89,7 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="27dp"
         android:paddingBottom="40dp"
-        android:src="@drawable/smallcd"/>
+        android:src="@drawable/smallwheel"/>
     <ImageView
         android:id="@+id/wheel_small_left"
         android:layout_width="wrap_content"
@@ -85,9 +97,9 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:contentDescription="@string/app_name"
-        android:layout_marginLeft="64dp"
+        android:layout_marginLeft="65dp"
         android:paddingBottom="35dp"
-        android:src="@drawable/middlecd" />
+        android:src="@drawable/middlewheel" />
     <ImageView
         android:id="@+id/wheel_small_right"
         android:layout_width="wrap_content"
@@ -97,7 +109,7 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="60dp"
         android:paddingBottom="35dp"
-        android:src="@drawable/middlecd" />
+        android:src="@drawable/middlewheel" />
     <LinearLayout
         android:id="@+id/time_calculator"
         android:layout_height="wrap_content"
